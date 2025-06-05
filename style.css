@@ -1,0 +1,151 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to bottom right, #fffaf1, #fff5e6);
+    overflow-x: hidden;
+    color: #333;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Floating Flowers & Hearts Container */
+.flower-bg,
+.heart-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Flower emojis floating */
+.flower-bg span {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.3;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    user-select: none;
+}
+
+/* Heart emojis floating */
+.heart-bg span {
+    position: absolute;
+    font-size: 28px;
+    opacity: 0.4;
+    color: #e74c3c;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    user-select: none;
+}
+
+/* Float animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Container styling */
+.container {
+    max-width: 700px;
+    margin: 80px auto;
+    background-color: #ffffffcc;
+    border: 3px solid #e3c882;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Titles */
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.8rem;
+    color: #b33939;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* Countdown Styling */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.time {
+    padding: 20px;
+    background: #fff;
+    border: 2px solid #f4d03f;
+    border-radius: 12px;
+    min-width: 110px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.time:hover {
+    transform: scale(1.05);
+}
+
+/* Blessing */
+.blessing {
+    font-size: 1.1rem;
+    color: #7a6c53;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .countdown {
+        gap: 12px;
+    }
+
+    .time {
+        min-width: 85px;
+        padding: 14px 12px;
+        font-size: 1.1rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .container {
+        margin: 40px 20px;
+        padding: 30px 20px;
+    }
+}

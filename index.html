@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>VISHNU & AKSHARA</title>
+
+		<!-- Romantic fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- Floating flowers container -->
+		<div class="flower-bg"></div>
+		<!-- Floating hearts container -->
+		<div class="heart-bg"></div>
+
+		<div class="container">
+			<h1 class="title">💐 Vishnu & Akshara 💐</h1>
+			<p class="subtitle">
+				Wedding on August 17, 2025 (Sunday)<br />
+				Between 12:00 PM and 12:22 PM
+			</p>
+
+			<div id="countdown" class="countdown">
+				<div class="time" id="days">0 Days</div>
+				<div class="time" id="hours">0 Hours</div>
+				<div class="time" id="minutes">0 Minutes</div>
+				<div class="time" id="seconds">0 Seconds</div>
+			</div>
+
+			<p class="blessing">
+				With all my heart, sharing this moment with my beloved 💛
+			</p>
+		</div>
+
+		<script src="script.js"></script>
+
+		<script>
+			// Generate floating hearts and flowers dynamically for nice effect
+
+			const flowerContainer = document.querySelector(".flower-bg");
+			const heartContainer = document.querySelector(".heart-bg");
+			const flowerEmojis = ["🌸", "🌺", "🌷", "🌼", "🌻"];
+			const heartEmojis = ["❤️", "💖", "💕", "💘", "💞"];
+
+			function createFloatingEmoji(container, emojis, count, sizeRange) {
+				for (let i = 0; i < count; i++) {
+					const emoji = document.createElement("span");
+					emoji.textContent =
+						emojis[Math.floor(Math.random() * emojis.length)];
+					const size =
+						Math.random() * (sizeRange.max - sizeRange.min) +
+						sizeRange.min;
+					emoji.style.fontSize = size + "px";
+					emoji.style.left = Math.random() * 100 + "vw";
+					emoji.style.animationDuration =
+						10 + Math.random() * 15 + "s";
+					emoji.style.animationDelay = Math.random() * 20 + "s";
+					container.appendChild(emoji);
+				}
+			}
+
+			// Create 15 flowers and 20 hearts floating
+			createFloatingEmoji(flowerContainer, flowerEmojis, 15, {
+				min: 20,
+				max: 30,
+			});
+			createFloatingEmoji(heartContainer, heartEmojis, 20, {
+				min: 24,
+				max: 36,
+			});
+		</script>
+	</body>
+</html>
